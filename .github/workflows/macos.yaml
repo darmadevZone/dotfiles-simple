@@ -17,13 +17,9 @@ jobs:
     - name: Validate syntax
       run: bash -n *.sh
 
-    - name: Install sudo
-      run: apt-get update && apt-get install -y sudo
-
     - name: set up dotfile
       run: |
-        chmod +x ./install.sh
-        sudo bash ./install.sh
+        bash ./install.sh
 
     - name: Check Echo
       run: command -v fish && command -v brew && command -v wezterm
