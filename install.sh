@@ -27,7 +27,7 @@ fi
 if ! command -v fish >/dev/null 2>&1; then
     echo "Installing fish..."
     brew install fish
-    sudo sh -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
+    sh -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
     chsh -s /opt/homebrew/bin/fish
     echo "Add brew binaries in fish path run the command..."
     fish_add_path /opt/homebrew/bin
