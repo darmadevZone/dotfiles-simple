@@ -19,3 +19,6 @@ jobs:
 
     - name: set up dotfile
       run: bash ./install.sh
+
+    - name: Check Echo
+      run: command -v fish && command -v brew && command -v wezterm
