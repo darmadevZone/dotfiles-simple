@@ -9,7 +9,7 @@ on:
 jobs:
   root-job:
     name: Install Dotfiles
-    runs-on: linux-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Set up Git repository
       uses: actions/checkout@v4
