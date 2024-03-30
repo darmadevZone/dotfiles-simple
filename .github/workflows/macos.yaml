@@ -2,14 +2,20 @@ name: Install Dotfile on macOS
 
 on:
   push:
+   branches:
+     - "main"
   pull_request:
 
 jobs:
   install-dotfiles:
     name: Install Dotfiles
-    runs-on: macos-12
+    runs-on: macos-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Install Dotfiles
-        run: ./install.sh
+    - name: Set up Git repository
+      uses: actions/checkout@v4
+
+    - name: Validate syntax
+      run: bash -n *.sh
+
+    - name: set up dotfile
+      run: bash ./install.sh
