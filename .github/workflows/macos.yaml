@@ -9,7 +9,7 @@ on:
 jobs:
   root-job:
     name: Install Dotfiles
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
     - name: Set up Git repository
       uses: actions/checkout@v4
@@ -19,6 +19,8 @@ jobs:
 
     - name: set up dotfile
       run: |
+        sudo sysadminctl -addUser myuser -admin
+        sudo -u myuser -H bash -e -c "id"
         sudo bash ./install.sh
 
     - name: Check Echo
