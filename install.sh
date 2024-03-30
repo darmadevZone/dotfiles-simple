@@ -40,5 +40,3 @@ if ! command -v wezterm >/dev/null 2>&1; then
     echo "Installing wezterm..."
     brew install --cask wezterm
 fi
-
-printf '%s\n' $fish_user_paths
