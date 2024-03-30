@@ -1,0 +1,15 @@
+name: Install Dotfile on macOS
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  install-dotfiles:
+    name: Install Dotfiles
+    runs-on: macos-12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Dotfiles
+        run: ./install.sh
